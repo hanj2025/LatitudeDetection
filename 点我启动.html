@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,10 @@
             background-color: var(--light-bg);
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: #111827;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -61,7 +65,8 @@
             margin-top: 30px;
         }
 
-        .upload-section, .results-section {
+        .upload-section,
+        .results-section {
             flex: 1;
             min-width: 300px;
             background: var(--card-bg);
@@ -71,7 +76,8 @@
             transition: var(--transition);
         }
 
-        .upload-section:hover, .results-section:hover {
+        .upload-section:hover,
+        .results-section:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
@@ -149,7 +155,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .hidden {
@@ -206,28 +214,30 @@
         }
     </style>
 </head>
+
 <body>
     <h1>项目经纬度检测工具</h1>
     <div class="container">
         <div class="upload-section">
             <h2>文件上传</h2>
             <div>
-                <label>本期项目Word文档:</label>
+                <label>本期项目文档 (docx格式，可选择多个) :</label>
                 <input type="file" id="wordFiles" class="file-input" multiple accept=".docx">
-                <p class="info-text">word文档中放一张含经纬度的投资申请表，并且放在最前面，现场照片随意放</p>
+                <p class="info-text">文档中放一张含经纬度的投资申请表，并且放在最前面，现场照片随意放后面</p>
             </div>
             <div>
-                <label>上期项目Excel表格 (可选):</label>
+                <label>上期项目表格 (可选):</label>
                 <input type="file" id="excelFile" class="file-input" accept=".xlsx,.xls">
                 <p class="info-text">表格放三列数据，分别是项目名称、经度、纬度。可选择上传，不上传则只检测本期项目间的问题</p>
             </div>
-            
+
             <!-- Umi-OCR安装提示 -->
-            <div style="margin: 15px 0; padding: 12px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 0 6px 6px 0;">
-                <p style="color: #856404; margin-bottom: 5px;">开始处理前，必须安装并运行Umi-OCR</p>
-                <p style="color: #856404; font-size: 14px;">下载链接：<a href="https://hiroi-sora.lanzoul.com/ivZ6e2rmu0bi" target="_blank" style="color: #0066cc;">https://hiroi-sora.lanzoul.com/ivZ6e2rmu0bi</a></p>
+            <div
+                style="margin: 15px 0; padding: 12px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 0 6px 6px 0;">
+                <p style="color: #856404; margin-bottom: 5px;">开始处理前，必须确保Umi-OCR正在运行！</p>
+                <a href="https://hiroi-sora.lanzoul.com/s/umi-ocr" target="_blank" style="color: #0066cc;">还没安装？点此下载</a>
             </div>
-            
+
             <button id="processBtn">开始处理</button>
             <div id="status" class="status"></div>
         </div>
@@ -239,10 +249,8 @@
 
     <!-- 作者信息 -->
     <div class="author-info" style="margin-top: 30px; text-align: center; color: #6b7280; font-size: 14px;">
-        <p>版本: 1.0</p>
-        <p>日期: 2025年7月29日15点58分</p>
-        <p>作者: HANJ</p>
-        <p>邮箱: hanj-cn@qq.com</p>
+        <p>版本: 1.1 丨 日期: 2025年7月30日</p>
+        <a href="mailto:hanj-cn@qq.com">作者: HANJ 丨 邮箱: hanj-cn@qq.com</a>
     </div>
 
     <!-- 第三方库将在后续步骤中下载并本地引入 -->
@@ -252,4 +260,5 @@
     <script src="./libs/turf.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
